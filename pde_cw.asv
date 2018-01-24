@@ -15,7 +15,7 @@ t=linspace(0,t_max,Nt);
 Vk=zeros(Nt,Nr,n_max); 
 
 for n = 1:n_max
-    Vk(:,:,n)= 2.*r_max./(pi.*R) .* (((-1)^n)/n .* sin(n*pi.*R/r_max) .* exp((n^2.*pi^2)*D.*T/r_max^2)) + T_ref + r_max^2.*G/(6.*D) - R.^2 .* G/(6.*D);
+    Vk(:,:,n)= 2*r_max/(pi.*r) * (((-1)^n)/n * sin(n*pi.*r/r_max) * exp((n^2*pi^2)*D.*t/r_max^2)) + T_ref + r_max^2
 end
 
 N=sum(Vk,3);
